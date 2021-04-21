@@ -1,0 +1,169 @@
+﻿<Window x:Class="Library2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <ListView x:Name="ListViewWorkers" SelectionChanged="SelectWorker" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Width="300" Height="396"  Visibility="Visible" Margin="0,23,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Surname}" Width="100">Фамилия</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}"  Width="100">Имя</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Lastname}" Width="100" >Отчество</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+
+        <ListView x:Name="ListViewBooks" SelectionChanged="SelectBook" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Width="300" Height="419"  Visibility="Hidden" Margin="0,23,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="300">Книга</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView x:Name="ListGenreBooks" SelectionChanged="SelectGenreBook" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Width="300" Height="419"  Visibility="Hidden" Margin="0,23,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="300">Жанр</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView x:Name="ListBindingTypeBooks" SelectionChanged="SelectTypeBindingBook"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Width="300" Height="419"  Visibility="Hidden" Margin="0,23,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="300">Тип переплета</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+
+        <ListView x:Name="ListViewAutors" SelectionChanged="SelectAuthor" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Width="300" Height="419"  Visibility="Hidden" Margin="0,23,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Surname}" Width="100">Фамилия</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}"  Width="100">Имя</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Lastname}" Width="100" >Отчество</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView x:Name="ListViewPosition" SelectionChanged="SelectPosition" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Width="300" Height="419"  Visibility="Hidden" Margin="0,23,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="150">Наименование</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Salary}" Width="150">Оклад</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView x:Name="ListViewClaim" SelectionChanged="SelectVidacha" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Width="300" Height="419"  Visibility="Hidden" Margin="0,23,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=NameBook}" Width="150">Книга</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=DateOfVidachi}" Width="150">Дата выдачи</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+
+
+        <TextBox x:Name="TextBoxNameWorkers" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="5,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Visible"/>
+        <TextBox x:Name="TextBoxSurnameWorkers" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="5,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Visible"/>
+        <TextBox x:Name="TextBoxLastnameWorkers" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="5,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Visible"/>
+        <TextBox x:Name="TextBoxPassport_SeriesWorkers" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="5,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Visibility="Visible"/>
+        <TextBox x:Name="TextBoxPassport_NumberWorkers" HorizontalAlignment="Left" Height="24" Margin="5,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1" Visibility="Visible"/>
+        <ComboBox x:Name="ComboBoxPossitionWorkers" Grid.Column="1"  HorizontalAlignment="Left" Margin="7,321,0,0" VerticalAlignment="Top" Width="148" Visibility="Visible"/>
+
+        <Label   x:Name="LabelNameWorkers" Content="Имя" Grid.Column="1" HorizontalAlignment="Left" Margin="5,39,0,0" VerticalAlignment="Top" Visibility="Visible"/>
+        <Label   x:Name="LabelSurnameWorkers" Content="Фамилия" Grid.Column="1" HorizontalAlignment="Left" Margin="5,87,0,0" VerticalAlignment="Top" Visibility="Visible"/>
+        <Label   x:Name="LabellastnameWorkers" Content="Отчество" Grid.Column="1" HorizontalAlignment="Left" Margin="5,140,0,0" VerticalAlignment="Top" Visibility="Visible"/>
+        <Label   x:Name="LabelSerPasWorkers" Content="Серия паспорта" Grid.Column="1" HorizontalAlignment="Left" Margin="5,190,0,0" VerticalAlignment="Top" Visibility="Visible"/>
+        <Label   x:Name="LabelNumPasWorkers" Content="Номер паспорта" Grid.Column="1" HorizontalAlignment="Left" Margin="5,240,0,0" VerticalAlignment="Top" Visibility="Visible"/>
+        <Label   x:Name="LabelTextBoxPossitionWorkers" Content="Должность" Grid.Column="1" HorizontalAlignment="Left" Margin="7,290,0,0" VerticalAlignment="Top" Visibility="Visible" RenderTransformOrigin="-1.239,8.5"/>
+
+
+
+        <TextBox x:Name="TextBoxBookName"           Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden"/>
+        <TextBox x:Name="TextBoxBookSheets"         Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden"/>
+
+        <ComboBox x:Name="ComboBoxBookTypeBinding"    Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,209,0,0"   VerticalAlignment="Top" Width="150" Visibility="Hidden"/>
+        <ComboBox x:Name="ComboBoxBookGenre"   Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,257,0,0"  VerticalAlignment="Top" Width="150" Visibility="Hidden"/>
+        <ComboBox x:Name="ComboBoxBookAutor"          Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,113,0,0" Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden"/>
+
+        <Label x:Name="LabelBookName"         Content="Книга" Grid.Column="1" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="LabelBookAutor"        Content="Автор" Grid.Column="1" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="LabelBookSheets"       Content="Количество страниц" Grid.Column="1" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="LabelBookTypeBinding"  Content="Тип переплета" Grid.Column="1" HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="LabelBookGenre"        Content="Жанр книги" Grid.Column="1" HorizontalAlignment="Left" Margin="11,231,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+
+
+
+        <TextBox x:Name="TextBoxNameAuthor"    Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden" />
+        <TextBox x:Name="TextBoxSurnameAuthor"   Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden"/>
+        <TextBox x:Name="TextBoxLastnameAuthor"  Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden"/>
+        <Label  x:Name="LabelNameAuthor"      Content="Имя" Grid.Column="1" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Visibility="Hidden" />
+        <Label  x:Name="LabelSurnameAuthor"   Content="Фамилия" Grid.Column="1" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label  x:Name="LabelLastnameAuthor"  Content="Отчество" Grid.Column="1" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+
+
+        <TextBox x:Name="TextBoxposition"   Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden" />
+        <TextBox x:Name="TextBoxSalary"   Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden"/>
+        <Label x:Name="Labelposition" Content="Наименование" Grid.Column="1" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Visibility="Hidden" />
+        <Label x:Name="LabelSalary"   Content="Оклад" Grid.Column="1" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+
+
+        <ComboBox x:Name="ComboBoxBookID"     Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,65,0,0"  Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden" />
+        <ComboBox x:Name="ComboBoxWorkerID"  Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,113,0,0"  Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden"/>
+        <TextBox x:Name="TextBoxDateClaim" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="11,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden"/>
+        <Label  x:Name="LabelBookID"    Content="Код книги" Grid.Column="1" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Visibility="Hidden" />
+        <Label  x:Name="LabelWorkerID"  Content="Код сотрудника должности" Grid.Column="1" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label  x:Name="LabelDateClaim" Content="Дата выдачи" Grid.Column="1" HorizontalAlignment="Left" Margin="11,135,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+
+
+        <TextBox x:Name="TextBoxBookGenre"   Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden" />
+        <Label x:Name="LabelTXBookGenre" Content="Наименование жанра" Grid.Column="1" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Visibility="Hidden" />
+
+        <TextBox x:Name="TextBoxBookTypeBinding"   Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Visibility="Hidden" />
+        <Label x:Name="LabelBookBinding" Content="Тип переплета" Grid.Column="1" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Visibility="Hidden" />
+
+
+
+
+
+
+        <Button x:Name="ButtonAdd"  Content="Add" Grid.Column="1" HorizontalAlignment="Left" Margin="10,389,0,0" BorderThickness="2" VerticalAlignment="Top" Width="75" Click="Button_Click_Add"/>
+        <Button x:Name="ButtonDelete" Content="Delete" Grid.Column="1" HorizontalAlignment="Left" Margin="90,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Delete"/>
+        <Button x:Name="ButtonUpdate" Content="Edit" Grid.Column="1" HorizontalAlignment="Left" Margin="170,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_Update"/>
+
+
+
+        <Button Content="Сотрудники" HorizontalAlignment="Left" Margin="116,0,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="Button_Click_Worker_DB" />
+        <Button Content="Книги" Grid.Column="1" HorizontalAlignment="Left" Margin="101,0,0,0" VerticalAlignment="Top" Width="92" Height="23" Click="Button_Click_Book_DB" RenderTransformOrigin="0.5,0.5"/>
+        <Button Content="Авторы" HorizontalAlignment="Left" Margin="26,0,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="Button_Click_Autors_DB" Grid.Column="1"/>
+        <Button Content="Должности" HorizontalAlignment="Left" Margin="191,0,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="Button_Click_Position_DB"/>
+        <Button Content="Выдача" HorizontalAlignment="Left" Margin="266,0,0,0" VerticalAlignment="Top" Width="60" Height="23" Click="Button_Click_Claim_DB" RenderTransformOrigin="0.24,0.543" Grid.ColumnSpan="2"/>
+        <Button Content="Жанр книги" Grid.Column="1" HorizontalAlignment="Left" Margin="193,0,0,0" VerticalAlignment="Top" Width="97" Height="23" Click="Button_Click_Book_Genre_DB" RenderTransformOrigin="0.253,0.333"/>
+        <Button Content="Тип переплета" Grid.Column="1" HorizontalAlignment="Left" Margin="290,0,0,0" VerticalAlignment="Top" Width="102" Height="23" Click="Button_Click_Book_Binding_DB" RenderTransformOrigin="0.253,0.333"/>
+
+
+        <Label Name="labelTest" HorizontalAlignment="Left" Margin="0,-1,0,0" VerticalAlignment="Top" Width="116"/>
+
+
+    </Grid>
+</Window>
